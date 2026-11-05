@@ -1,11 +1,17 @@
+"""Moduuli lukee pelaajatiedot verkkopalvelusta."""
+
 from urllib import request
 from player import Player
 
+
 class PlayerReader:
-    def __init__(self):
-        self._url = "https://studies.cs.helsinki.fi/nhlstats/2022-23/players.txt"
+    """Lukee pelaajatiedot annetusta verkko-osoitteesta."""
+
+    def __init__(self, url):
+        self._url = url
 
     def get_players(self):
+        """Hakee ja palauttaa listan pelaajaolioita."""
         players_file = request.urlopen(self._url)
         players = []
 
@@ -20,7 +26,6 @@ class PlayerReader:
                     int(parts[3].strip()),
                     int(parts[4].strip())
                 )
-
                 players.append(player)
 
         return players

@@ -1,8 +1,14 @@
+"""Pääohjelma projektin tietojen lukemiseen."""
+
 from project_reader import ProjectReader
 
 
 def main():
-    url = "https://raw.githubusercontent.com/ohjelmistotuotanto-jyu/tehtavat/refs/heads/main/osa2/test-project/pyproject.toml"
+    """Pääohjelman suoritus."""
+    url = (
+        "https://raw.githubusercontent.com/ohjelmistotuotanto-jyu/"
+        "tehtavat/refs/heads/main/osa2/stat/pyproject.toml"
+    )
     reader = ProjectReader(url)
     print(reader.get_project())
 
