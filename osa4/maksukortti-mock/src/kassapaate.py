@@ -13,3 +13,8 @@ class Kassapaate:
         if kortti.saldo >= HINTA:
             kortti.osta(HINTA)
             self.myytyja_lounaita = self.myytyja_lounaita + 1
+        kortti.lataa(summa)
+
+    def osta_lounas(self, kortti):
+        kortti.osta(HINTA)
+        self.myytyja_lounaita = self.myytyja_lounaita + 1
